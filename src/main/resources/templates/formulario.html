@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #formulario {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            margin-top: 20px;
+            padding:10px;
+        }
+        #formulario2{
+            padding-right: 100px;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+<body>
+<H1 class="ok">FORMULARIO DE COMPRA</H1>
+<h2>Solicitud de datos</h2>
+<form th:action="@{/registrar}" th:object="${estudiante}" method="post" id="formulario">
+    <fieldset id="formulario2">
+        <legend>Datos del usuario</legend>
+        <table>
+            <tr>
+                <td><label>Nombre: </label></td>
+                <td><input type="text" placeholder="Ingrese su nombre" th:field="*{nombre}" required="required"/></td>
+            </tr>
+            <tr>
+                <td><label>Apellido: </label></td>
+                <td><input type="text" placeholder="Ingrese su Apellido" th:field="*{apellido}" required="required"/></td>
+            </tr>
+            <tr>
+                <td><label>Correo: </label></td>
+                <td><input type="email" placeholder="Ingrese su Correo" th:field="*{correo}" required="required"/></td>
+            </tr>
+            <tr>
+                <td><label>Edad: </label></td>
+                <td><input type="number" placeholder="Ingrese su Edad" th:field="*{edad}" required="required" min="0"/></td>
+            </tr>
+            <tr>
+                <td><label>¿Estás estudiando?: </label></td>
+                <td><input type="checkbox" th:field="*{estudioso}"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Registrar...</button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>

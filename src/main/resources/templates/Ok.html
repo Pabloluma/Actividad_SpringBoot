@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>RESUMEN DE DATOS GUARDADOS</h1>
+<label>NOMBRE: </label><br/>
+<b><label th:text="${rec_nombre}"></label></b><br/>
+<label>APELLIDO: </label><br/>
+<b><label th:text="${rec_apellido}"></label></b><br/>
+<label>CORREO: </label><br/>
+<b><label th:text="${rec_correo}"></label></b><br/>
+<label>EDAD: </label><br/>
+<b><label th:text="${rec_edad}"></label></b><br/>
+<label>Estudia: </label><br/>
+<b><label th:text="${rec_estudios}"></label></b><br/>
+<div>
+    <a th:href="@{/}"><button>Inicio</button></a>
+    <a th:href="@{/abrir}"><button>Alta</button></a>
+    <a th:href="@{/altas}"><button>Mostrar Personas</button></a>
+</div>
+
+</body>
+</html>

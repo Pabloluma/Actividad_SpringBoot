@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.pablo.actividad_springboot.Persona" table="persona" schema="actividadspringboot">
+        <id name="id">
+            <column name="id" sql-type="int(11)" />
+        </id>
+        <property name="nombre">
+            <column name="nombre" sql-type="varchar(45)" length="45" not-null="true" />
+        </property>
+        <property name="apellido">
+            <column name="apellido" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="correo">
+            <column name="correo" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="edad">
+            <column name="edad" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="estudia">
+            <column name="estudia" sql-type="tinyint(4)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

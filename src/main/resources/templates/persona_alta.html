@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<b><label th:text="${lista}  "></label></b><br/>-->
+<div th:each="persona : ${lista}">
+    <label>ID: <span th:text="${persona.id}"></span></label> <label>, Nombre: <span th:text="${persona.nombre}"></span></label>
+    <label>, Apellido: <span th:text="${persona.apellido}"></span></label><label>, Correo: <span th:text="${persona.correo}"></span></label>
+    <label>, Edad: <span th:text="${persona.edad}"></span></label>
+    <br>
+    <!-- Puedes agregar una línea horizontal para separar los registros -->
+    <hr>
+</div>
+<div>
+    <a th:href="@{/}"><button>Inicio</button></a>
+    <a th:href="@{/abrir}"><button>Alta</button></a>
+</div>
+</body>
+</html>
