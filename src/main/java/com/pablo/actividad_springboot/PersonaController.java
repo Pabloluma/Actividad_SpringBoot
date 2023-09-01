@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class PersonaContreoller {
+public class PersonaController {
 	//Capturar datos
 	@GetMapping("/abrir")
 	public String abrirP(Model model){
