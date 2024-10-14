@@ -15,7 +15,7 @@
 <label>EDAD: </label><br/>
 <b><label th:text="${rec_edad}"></label></b><br/>
 <label>Estudia: </label><br/>
-<b><label th:text="${rec_estudios}"></label></b><br/>
+<b><label th:text="${rec_estudios}?'Si':'No'"></label></b><br/>
 <div>
     <a th:href="@{/}"><button>Inicio</button></a>
     <a th:href="@{/abrir}"><button>Alta</button></a>

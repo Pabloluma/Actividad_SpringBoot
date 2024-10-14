@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/eliminado}" method="post">
+    <select name="idPersona">
+        <option>Selecciona una persona</option>
+        <option th:each="persona: ${listaCombo}" th:value="${persona.id}" th:text="${persona.id} + ' ' + ${persona.nombre} + ' ' + ${persona.apellido}"></option>
+    </select>
+    <button type="submit">Borrar</button>
+</form>
+<a th:href="@{/}"><button>Inicio</button></a>
+</body>
+</html>

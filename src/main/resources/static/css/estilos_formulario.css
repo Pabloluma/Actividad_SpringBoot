@@ -1,0 +1,18 @@
+body{
+    text-align: center;
+}
+#formulario {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    margin-top: 20px;
+    padding:10px;
+}
+#formulario2{
+    padding-right: 100px;
+    padding-left: 100px;
+}

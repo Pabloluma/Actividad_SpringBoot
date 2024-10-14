@@ -1,9 +1,10 @@
-package com.pablo.actividad_springboot;
+package com.pablo.actividad_springboot.Modelo;
 
 import lombok.Data;
 
 import java.util.Objects;
 
+//Modelo
 @Data
 public class Persona {
 	private int id;
@@ -13,8 +14,6 @@ public class Persona {
 	private Integer edad;
 	private Byte estudia;
 	private boolean estudioso;
-
-
 
 	public Persona() {
 	}
@@ -83,11 +82,12 @@ public class Persona {
 		this.estudia = estudia;
 	}
 	public boolean isEstudioso() {
-		return estudioso;
+		return estudia != null && estudia == 1;
 	}
 
 	public void setEstudioso(boolean estudioso) {
 		this.estudioso = estudioso;
+		this.estudia = (byte) (estudioso ? 1 : 0);
 	}
 
 	@Override

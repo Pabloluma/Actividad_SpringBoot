@@ -1,4 +1,4 @@
-package com.pablo.actividad_springboot;
+package com.pablo.actividad_springboot.Controlador;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 

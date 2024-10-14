@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<!--<b><label th:text="${lista}  "></label></b><br/>-->
+
 <div th:each="persona : ${lista}">
     <label>ID: <span th:text="${persona.id}"></span></label> <label>, Nombre: <span th:text="${persona.nombre}"></span></label>
-    <label>, Apellido: <span th:text="${persona.apellido}"></span></label><label>, Correo: <span th:text="${persona.correo}"></span></label>
-    <label>, Edad: <span th:text="${persona.edad}"></span></label>
+    <label>, Apellido: <span th:text="${persona.apellido}"></span></label><label>, Correo: <span
+        th:text="${persona.correo}"></span></label>
+    <label>, Edad: <span th:text="${persona.edad}"></span></label><label>, Estudia: <span th:text="${persona.estudioso}?'Si': 'No'"></span></label>
+    <form th:action="@{/editar}" method="post">
+        <input type="hidden" name="idPersona" th:value="${persona.id}"/>
+        <button type="submit" title="Modificar">
+            <img th:src="@{/images/pen.png}" width="15px"/>
+        </button>
+    </form>
     <br>
-    <!-- Puedes agregar una línea horizontal para separar los registros -->
     <hr>
 </div>
 <div>
-    <a th:href="@{/}"><button>Inicio</button></a>
-    <a th:href="@{/abrir}"><button>Alta</button></a>
+    <a th:href="@{/}">
+        <button>Inicio</button>
+    </a>
+    <a th:href="@{/abrir}">
+        <button>Alta</button>
+    </a>
+    <a th:href="@{/borrar}"><button>Borrar persona</button></a>
 </div>
 </body>
 </html>

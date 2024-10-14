@@ -2,15 +2,17 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Editar Persona</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/estilos_formulario.css}" />
 </head>
 <body>
-<H1 class="ok">FORMULARIO DE COMPRA</H1>
-<h2>Solicitud de datos</h2>
-<form th:action="@{/registrar}" th:object="${estudiante}" method="post" id="formulario">
+
+<h1 class="ok">Editar Datos de la Persona</h1>
+
+<form th:action="@{/actualizar}" th:object="${persona}" method="post" id="formulario">
     <fieldset id="formulario2">
         <legend>Datos del usuario</legend>
+        <input type="hidden" th:field="*{id}" />
         <table>
             <tr>
                 <td><label>Nombre: </label></td>
@@ -18,27 +20,22 @@
             </tr>
             <tr>
                 <td><label>Apellido: </label></td>
-                <td><input type="text" placeholder="Ingrese su Apellido" th:field="*{apellido}" required="required"/></td>
+                <td><input type="text" placeholder="Ingrese su apellido" th:field="*{apellido}" required="required"/></td>
             </tr>
             <tr>
                 <td><label>Correo: </label></td>
-                <td><input type="email" placeholder="Ingrese su Correo" th:field="*{correo}" required="required"/></td>
+                <td><input type="email" placeholder="Ingrese su correo" th:field="*{correo}" required="required"/></td>
             </tr>
             <tr>
                 <td><label>Edad: </label></td>
-                <td><input type="number" placeholder="Ingrese su Edad" th:field="*{edad}" required="required" min="0"/></td>
+                <td><input type="number" placeholder="Ingrese su edad" th:field="*{edad}" required="required" min="0"/></td>
             </tr>
             <tr>
                 <td><label>¿Estás estudiando?: </label></td>
                 <td><input type="checkbox" th:field="*{estudioso}"/></td>
             </tr>
             <tr>
-                <td>
-                    <button type="submit">Registrar...</button>
-                    <a th:href="@{/}"><button>Inicio</button></a>
-                    <a th:href="@{/altas}"><button>Mostrar todas las personas</button></a>
-
-                </td>
+                <td><button type="submit">Actualizar</button></td>
             </tr>
         </table>
     </fieldset>
